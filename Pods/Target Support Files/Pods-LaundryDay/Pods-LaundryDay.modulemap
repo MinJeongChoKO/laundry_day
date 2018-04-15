@@ -1,0 +1,6 @@
+framework module Pods_LaundryDay {
+  umbrella header "Pods-LaundryDay-umbrella.h"
+
+  export *
+  module * { export * }
+}

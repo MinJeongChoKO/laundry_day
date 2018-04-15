@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tDm-xd-aiH">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Closet View Controller-->
+        <scene sceneID="2oj-qh-bLh">
+            <objects>
+                <viewController id="xsJ-hG-bxR" customClass="ClosetViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MVd-n5-Ypx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kE0-nI-yYn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1gP-yo-0cw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNK-xx-rsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="1835"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="vZb-Jc-7FO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tDm-xd-aiH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="c89-nf-w7Q"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gL7-aj-deo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xsJ-hG-bxR" kind="relationship" relationship="rootViewController" id="ncK-ba-xcj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7LP-tp-uGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="1065"/>
+        </scene>
+    </scenes>
+</document>
