@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
@@ -29,6 +31,7 @@ class SignUpViewController: UIViewController {
         
         userProfileImage.layer.cornerRadius = 50
         
+        //디폴트이미지 누르면 이미지 선택하도록
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImage))
         userProfileImage.addGestureRecognizer(tapGesture)
         userProfileImage.isUserInteractionEnabled = true
@@ -37,9 +40,9 @@ class SignUpViewController: UIViewController {
         signUpButton.isEnabled = false
         handleTextField()
 
-        // Do any additional setup after loading the view.
     }
     
+    //키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -49,8 +52,6 @@ class SignUpViewController: UIViewController {
         userPasswordTextField.addTarget(self, action: #selector(self.textFieldChanged), for: UIControlEvents.editingChanged)
         userNameTextField.addTarget(self, action: #selector(self.textFieldChanged), for: UIControlEvents.editingChanged)
         userContactTextField.addTarget(self, action: #selector(self.textFieldChanged), for: UIControlEvents.editingChanged)
-
-        
     }
     
     @objc func textFieldChanged() {
@@ -71,14 +72,46 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton_TUI(_ sender: Any) {
+        //print(ref.description()) //https://laundryday-4027f.firebaseio.com
+        Auth.auth().createUser(withEmail: userEmailTextField.text!, password: userPasswordTextField.text!, completion: {(user: User?, error: Error?) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            let uid = user?.uid
+            
+            //스토리지에 유저 uid로 하위폴더 만들어서 이미지 넣음
+            let storageRef = Storage.storage().reference(forURL: "gs://laundryday-4027f.appspot.com").child("profileImg").child(uid!)
+            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+                storageRef.putData(imageData, metadata: nil, completion: {(metadata, error) in
+                    if error != nil {
+                        return
+                    }
+                    let profileImgURL = metadata?.downloadURL()?.absoluteString
+                    
+                    self.setUserInfo(userName: self.userNameTextField.text!, email: self.userEmailTextField.text!, contact: self.userContactTextField.text!, profileImgURL: profileImgURL!, uid: uid!)
+                })
+            }
+            
+            
+        })
+        
+        
+    }
+    func setUserInfo(userName: String, email: String, contact: String, profileImgURL: String, uid: String) {
+        let ref = Database.database().reference()
+        let usersRef = ref.child("users")
+        let newUserRef = usersRef.child(uid)
+        newUserRef.setValue(["userName": userName, "email": email, "contact": contact, "profileImgURL": profileImgURL])
     }
     
     
     
-    
+    //다시 sign in VC 로
     @IBAction func logInButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
