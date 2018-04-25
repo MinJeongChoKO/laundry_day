@@ -72,40 +72,19 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton_TUI(_ sender: Any) {
-        //print(ref.description()) //https://laundryday-4027f.firebaseio.com
-        Auth.auth().createUser(withEmail: userEmailTextField.text!, password: userPasswordTextField.text!, completion: {(user: User?, error: Error?) in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            let uid = user?.uid
+        if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+            AuthService.signUp(username: userNameTextField.text!, email: userEmailTextField.text!, password: userPasswordTextField.text!, contact: userContactTextField.text!, imageData: imageData, onSuccess: {
+                    self.performSegue(withIdentifier: "signUpToMain", sender: nil)
+                }, onError: {(errorString) in
+                    print(errorString!)
+            })
             
-            //스토리지에 유저 uid로 하위폴더 만들어서 이미지 넣음
-            let storageRef = Storage.storage().reference(forURL: "gs://laundryday-4027f.appspot.com").child("profileImg").child(uid!)
-            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
-                storageRef.putData(imageData, metadata: nil, completion: {(metadata, error) in
-                    if error != nil {
-                        return
-                    }
-                    let profileImgURL = metadata?.downloadURL()?.absoluteString
-                    
-                    self.setUserInfo(userName: self.userNameTextField.text!, email: self.userEmailTextField.text!, contact: self.userContactTextField.text!, profileImgURL: profileImgURL!, uid: uid!)
-                })
-            }
-            
-            
-        })
-        
+        } else {
+            print("Profile Image should be selected.")
+        }
         
     }
-    func setUserInfo(userName: String, email: String, contact: String, profileImgURL: String, uid: String) {
-        let ref = Database.database().reference()
-        let usersRef = ref.child("users")
-        let newUserRef = usersRef.child(uid)
-        newUserRef.setValue(["userName": userName, "email": email, "contact": contact, "profileImgURL": profileImgURL])
-        self.performSegue(withIdentifier: "signUpToMain", sender: nil)
-    }
-    
+   
     
     
     //다시 sign in VC 로

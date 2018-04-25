@@ -60,14 +60,11 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton_TUI(_ sender: Any) {
-        Auth.auth().signIn(withEmail: userEmailTextField.text!, password: userPasswordTextField.text!, completion: {(user, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
+        AuthService.signIn(email: userEmailTextField.text!, password: userPasswordTextField.text!, onSuccess: {
             self.performSegue(withIdentifier: "signInToMain", sender: nil)
+        }, onError: { error in
+            print(error!)
         })
-        
     }
     
     

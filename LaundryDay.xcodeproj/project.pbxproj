@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC728F4920908963003B3805 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC728F4820908962003B3805 /* Config.swift */; };
 		CC825A532081D43800A4BDCC /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC825A522081D43800A4BDCC /* Start.storyboard */; };
 		CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC825A542081DE6800A4BDCC /* SignInViewController.swift */; };
 		CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC825A562081DE8800A4BDCC /* SignUpViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		3B3389B95CD66B5797DF95CE /* Pods-LaundryDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.debug.xcconfig"; sourceTree = "<group>"; };
 		C55F18E44790B284EB4FA295 /* Pods_LaundryDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaundryDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC728F4820908962003B3805 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CC825A522081D43800A4BDCC /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		CC825A542081DE6800A4BDCC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CC825A562081DE8800A4BDCC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				CCC295F4207F93F90021BF8E /* Info.plist */,
 				CC825A702081E69400A4BDCC /* Storyboards */,
 				CC831C30208F1CAE002798A7 /* AuthService.swift */,
+				CC728F4820908962003B3805 /* Config.swift */,
 			);
 			path = LaundryDay;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */,
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
+				CC728F4920908963003B3805 /* Config.swift in Sources */,
 				CC825A5D2081E30B00A4BDCC /* ClosetViewController.swift in Sources */,
 				CC825A5F2081E36000A4BDCC /* LaundryViewController.swift in Sources */,
 				CC825A632081E39A00A4BDCC /* ProfileViewController.swift in Sources */,
