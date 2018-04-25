@@ -7,19 +7,69 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var userEmailTextField: UITextField!
+    @IBOutlet weak var userPasswordTextField: UITextField!
+    
+    @IBOutlet weak var signInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        signInButton.backgroundColor = UIColor.lightGray
+        signInButton.isEnabled = false
+        handleTextField()
+        
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //자동로그인
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "signInToMain", sender: nil)
+        }
+    }
+    
+    func handleTextField() {
+        userEmailTextField.addTarget(self, action: #selector(self.textFieldChanged), for: UIControlEvents.editingChanged)
+        userPasswordTextField.addTarget(self, action: #selector(self.textFieldChanged), for: UIControlEvents.editingChanged)
+        
+    }
+    
+    @objc func textFieldChanged() {
+        guard  let email = userEmailTextField.text, !email.isEmpty, let password = userPasswordTextField.text, !password.isEmpty else {
+            signInButton.isEnabled = false
+            signInButton.backgroundColor = UIColor.lightGray
+            return
+        }
+        signInButton.isEnabled = true
+        signInButton.backgroundColor = UIColor.darkGray
+        
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func signInButton_TUI(_ sender: Any) {
+        Auth.auth().signIn(withEmail: userEmailTextField.text!, password: userPasswordTextField.text!, completion: {(user, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self.performSegue(withIdentifier: "signInToMain", sender: nil)
+        })
+        
+    }
+    
     
 
     /*

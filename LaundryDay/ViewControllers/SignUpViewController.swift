@@ -103,6 +103,7 @@ class SignUpViewController: UIViewController {
         let usersRef = ref.child("users")
         let newUserRef = usersRef.child(uid)
         newUserRef.setValue(["userName": userName, "email": email, "contact": contact, "profileImgURL": profileImgURL])
+        self.performSegue(withIdentifier: "signUpToMain", sender: nil)
     }
     
     

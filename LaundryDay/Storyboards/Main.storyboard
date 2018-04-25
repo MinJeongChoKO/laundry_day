@@ -22,8 +22,8 @@
                     <connections>
                         <segue destination="t2Y-Ec-gpR" kind="relationship" relationship="viewControllers" id="VFS-uN-H4O"/>
                         <segue destination="JDf-sb-b3O" kind="relationship" relationship="viewControllers" id="Mfk-Yo-tYN"/>
-                        <segue destination="VOb-zt-Gbr" kind="relationship" relationship="viewControllers" id="Eb5-8k-y9J"/>
                         <segue destination="YLF-le-Nnz" kind="relationship" relationship="viewControllers" id="bb8-r9-RNj"/>
+                        <segue destination="VOb-zt-Gbr" kind="relationship" relationship="viewControllers" id="Eb5-8k-y9J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fku-JX-Mnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,7 +34,7 @@
         <scene sceneID="vnJ-xt-ihE">
             <objects>
                 <viewControllerPlaceholder storyboardName="Closet" id="t2Y-Ec-gpR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rVo-9E-tgn"/>
+                    <tabBarItem key="tabBarItem" title="나의옷장" id="rVo-9E-tgn"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvy-1o-oxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +44,7 @@
         <scene sceneID="YJ7-c9-0tI">
             <objects>
                 <viewControllerPlaceholder storyboardName="Laundry" id="JDf-sb-b3O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dg1-u1-kEJ"/>
+                    <tabBarItem key="tabBarItem" title="세탁" id="dg1-u1-kEJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Da5-Oo-e0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +54,7 @@
         <scene sceneID="pGn-zS-8Kq">
             <objects>
                 <viewControllerPlaceholder storyboardName="Board" id="YLF-le-Nnz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qj5-mv-cGY"/>
+                    <tabBarItem key="tabBarItem" title="게시판" id="qj5-mv-cGY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eN6-Ha-FCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +64,7 @@
         <scene sceneID="Rh1-Ut-zhz">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="VOb-zt-Gbr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="af3-l3-81b"/>
+                    <tabBarItem key="tabBarItem" title="프로필" id="af3-l3-81b"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeF-sj-juf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="eL0-Ix-Wos">
             <objects>
-                <viewController id="4XX-3E-QWg" customClass="SignInViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="4XX-3E-QWg" customClass="SignInViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDk-IU-eEc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="nxC-bk-Rih" kind="presentation" id="Rhk-wb-sA1"/>
+                                            <action selector="signInButton_TUI:" destination="4XX-3E-QWg" eventType="touchUpInside" id="XXf-FX-baj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,6 +75,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TPL-z3-1QI"/>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="iJ7-oH-U7s" id="Y2R-8F-VA1"/>
+                        <outlet property="userEmailTextField" destination="A8Y-0G-q07" id="uuh-0L-DAK"/>
+                        <outlet property="userPasswordTextField" destination="1es-en-WdZ" id="AID-SD-GhU"/>
+                        <segue destination="nxC-bk-Rih" kind="presentation" identifier="signInToMain" id="Vzv-m4-L3v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqS-2W-PMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,7 +132,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signUpButton_TUI:" destination="wZj-Q3-gFu" eventType="touchUpInside" id="Cq7-Ii-gnn"/>
-                                            <segue destination="nxC-bk-Rih" kind="presentation" id="Sey-lU-p7I"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -166,6 +171,7 @@
                         <outlet property="userNameTextField" destination="npp-wl-NJi" id="QaA-nB-Z2W"/>
                         <outlet property="userPasswordTextField" destination="fTW-zJ-v8O" id="6Ju-gt-qR7"/>
                         <outlet property="userProfileImage" destination="gbJ-zs-jn1" id="EHz-6t-dMH"/>
+                        <segue destination="nxC-bk-Rih" kind="presentation" identifier="signUpToMain" id="34V-vs-CGT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGT-iV-TlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,6 +191,6 @@
         <image name="default" width="1290" height="1290"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Sey-lU-p7I"/>
+        <segue reference="Vzv-m4-L3v"/>
     </inferredMetricsTieBreakers>
 </document>
