@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import SDWebImage
+import FirebaseAuth
 
 class ClosetViewController: UIViewController {
 
@@ -23,7 +24,11 @@ class ClosetViewController: UIViewController {
     }
 
     func loadData() {
-        Database.database().reference().child("clothes").observe(.childAdded) {snapshot in
+        guard let currentUser = Auth.auth().currentUser else{
+            return
+        }
+        let currentUserID = currentUser.uid
+        Database.database().reference().child("clothes").child(currentUserID).observe(.childAdded) {snapshot in
             if let dict = snapshot.value as? [String:Any] {
                 let newClothes = Clothes.transformClothes(dict: dict)
                 self.items.append(newClothes)

@@ -81,13 +81,14 @@ class AddClothesViewController: UIViewController {
     func sendDataToDatabase(productImgUrl:String, productName:String) {
         let ref = Database.database().reference()
         let clothesRef = ref.child("clothes")
-        let newClothesID = clothesRef.childByAutoId().key
-        let newClothesRef = clothesRef.child(newClothesID)
         guard let currentUser = Auth.auth().currentUser else{
             return
         }
         let currentUserID = currentUser.uid
-        newClothesRef.setValue(["uid": currentUserID,"productImgUrl":productImgUrl, "productName": productName], withCompletionBlock: {(error, ref) in
+        let currentUserRef = clothesRef.child(currentUserID)
+        let newClothesID = currentUserRef.childByAutoId().key
+        let newClothesRef = currentUserRef.child(newClothesID)
+        newClothesRef.setValue(["productImgUrl":productImgUrl, "productName": productName], withCompletionBlock: {(error, ref) in
             if error != nil {
                 ProgressHUD.showError(error?.localizedDescription)
                 return
