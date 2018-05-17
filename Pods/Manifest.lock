@@ -50,6 +50,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ProgressHUD (2.51)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -57,6 +60,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - ProgressHUD
+  - SDWebImage
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -72,6 +76,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - ProgressHUD
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Firebase: d7fdf40e4d6c841849c52919f437fd3a0009ded0
@@ -86,7 +91,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: f43dc50c5874ee746c2814708965b9a8f2c25678
+PODFILE CHECKSUM: 44ec2cd1eb4acaa0c2ee784a01d96eb1a97223de
 
 COCOAPODS: 1.5.0

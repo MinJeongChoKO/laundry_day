@@ -21,7 +21,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="t2Y-Ec-gpR" kind="relationship" relationship="viewControllers" id="VFS-uN-H4O"/>
-                        <segue destination="JDf-sb-b3O" kind="relationship" relationship="viewControllers" id="Mfk-Yo-tYN"/>
                         <segue destination="YLF-le-Nnz" kind="relationship" relationship="viewControllers" id="bb8-r9-RNj"/>
                         <segue destination="VOb-zt-Gbr" kind="relationship" relationship="viewControllers" id="Eb5-8k-y9J"/>
                     </connections>
@@ -38,17 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvy-1o-oxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="1065"/>
-        </scene>
-        <!--Laundry-->
-        <scene sceneID="YJ7-c9-0tI">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Laundry" id="JDf-sb-b3O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="세탁" id="dg1-u1-kEJ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Da5-Oo-e0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1607" y="1116"/>
+            <point key="canvasLocation" x="1049" y="598"/>
         </scene>
         <!--Board-->
         <scene sceneID="pGn-zS-8Kq">
@@ -58,7 +47,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eN6-Ha-FCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2586" y="1092"/>
+            <point key="canvasLocation" x="1757" y="598"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Rh1-Ut-zhz">
@@ -68,7 +57,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeF-sj-juf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3638" y="1116"/>
+            <point key="canvasLocation" x="2502" y="598"/>
         </scene>
     </scenes>
 </document>

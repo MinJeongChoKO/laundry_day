@@ -9,6 +9,7 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'ProgressHUD'
+pod 'SDWebImage'
 
   # Pods for LaundryDay
 

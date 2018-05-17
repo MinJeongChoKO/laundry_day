@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
+import ProgressHUD
 
 class SignUpViewController: UIViewController {
 
@@ -72,15 +73,17 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton_TUI(_ sender: Any) {
+        ProgressHUD.show("Waiting")
         if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
             AuthService.signUp(username: userNameTextField.text!, email: userEmailTextField.text!, password: userPasswordTextField.text!, contact: userContactTextField.text!, imageData: imageData, onSuccess: {
+                    ProgressHUD.showSuccess("Success")
                     self.performSegue(withIdentifier: "signUpToMain", sender: nil)
                 }, onError: {(errorString) in
-                    print(errorString!)
+                    ProgressHUD.showError(errorString!)
             })
             
         } else {
-            print("Profile Image should be selected.")
+            ProgressHUD.showError("Profile Image should be selected.")
         }
         
     }

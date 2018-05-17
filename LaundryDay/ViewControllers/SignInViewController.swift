@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import ProgressHUD
 
 class SignInViewController: UIViewController {
 
@@ -60,10 +61,13 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton_TUI(_ sender: Any) {
+        view.endEditing(true)
+        ProgressHUD.show("Waiting")
         AuthService.signIn(email: userEmailTextField.text!, password: userPasswordTextField.text!, onSuccess: {
+            ProgressHUD.showSuccess("Success")
             self.performSegue(withIdentifier: "signInToMain", sender: nil)
         }, onError: { error in
-            print(error!)
+            ProgressHUD.showError(error!)
         })
     }
     

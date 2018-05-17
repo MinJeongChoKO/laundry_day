@@ -7,29 +7,44 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import SDWebImage
 
 class ClosetViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var items = [Clothes]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        
+        loadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadData() {
+        Database.database().reference().child("clothes").observe(.childAdded) {snapshot in
+            if let dict = snapshot.value as? [String:Any] {
+                let newClothes = Clothes.transformClothes(dict: dict)
+                self.items.append(newClothes)
+                self.collectionView.reloadData()
+            }
+        }
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+extension ClosetViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "clothes", for: indexPath) as! ClosetCollectionViewCell
+        let item = items[indexPath.row]
+        cell.item = item
+        
+        return cell
+    }
+}
+
