@@ -20,6 +20,14 @@ class UserApi {
         return REF_USERS.child(currentUser.uid)
     }
     
+    var CURRENT_USER: User? {
+        if let currentUser = Auth.auth().currentUser {
+            return currentUser
+        }
+        return nil
+    }
+    
+    
     func observeCurrentUser(completion:@escaping (UserInfo) -> Void) {
         guard let currentUser = Auth.auth().currentUser else {
             return

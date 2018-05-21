@@ -8,9 +8,7 @@
 
 import UIKit
 import ProgressHUD
-import FirebaseStorage
-import FirebaseDatabase
-import FirebaseAuth
+
 
 class AddClothesViewController: UIViewController {
 
@@ -56,60 +54,17 @@ class AddClothesViewController: UIViewController {
     @IBAction func uploadButton_TUI(_ sender: Any) {
         ProgressHUD.show("Waiting")
         if let productImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(productImg, 0.1) {
-            let imageString = NSUUID().uuidString
-            let storageRef = Storage.storage().reference(forURL: Config.STROAGE_ROOT_REF).child("items").child(imageString)
-            storageRef.putData(imageData, metadata: nil, completion: {(metadata, error) in
-                if error != nil {
-                    ProgressHUD.showError(error?.localizedDescription)
-                    return
-                }
-                let productImgURL = metadata?.downloadURL()?.absoluteString
-                guard let productNameText = self.productNameTextField.text else {
-                    return
-                }       //name안적으면 nil로 들어가는듯
-                self.sendDataToDatabase(productImgUrl: productImgURL!,productName: productNameText)
-            })
-            
+            HelperService.updataToServer(data: imageData, productName: productNameTextField.text!, onSuccess: {
+                self.dismiss(animated: true, completion: nil)
+                })
             
         } else {
             ProgressHUD.showError("Profile Image should be selected.")
         }
+    
         
     }
     
-    
-    func sendDataToDatabase(productImgUrl:String, productName:String) {
-        let ref = Database.database().reference()
-        let clothesRef = ref.child("items")
-//        let currentUserID = currentUser.uid
-//        let currentUserRef = clothesRef.child(currentUserID)
-        
-        let newClothesID = clothesRef.childByAutoId().key
-        let newClothesRef = clothesRef.child(newClothesID)
-        guard let currentUser = Auth.auth().currentUser else{
-            return
-        }
-        let currentUserID = currentUser.uid
-        newClothesRef.setValue(["productImgUrl":productImgUrl, "productName": productName, "uid": currentUserID], withCompletionBlock: {(error, ref) in
-            if error != nil {
-                ProgressHUD.showError(error?.localizedDescription)
-                return
-            }
-            
-            let myClothesRef = Api.MyItems.REF_MYITEMS.child(currentUserID).child(newClothesID)
-            myClothesRef.setValue(true, withCompletionBlock: {(error,ref) in
-                if error != nil {
-                    ProgressHUD.showError(error?.localizedDescription)
-                    return
-                }
-            })
-            
-            
-            ProgressHUD.showSuccess("Success")
-            self.dismiss(animated: true, completion: nil)
-
-        })
-    }
     
     //추가하기 창 취소
     @IBAction func cancelButton_TUI(_ sender: Any) {

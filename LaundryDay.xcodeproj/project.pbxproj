@@ -23,6 +23,7 @@
 		CC92F2EB20AC8649006C04AB /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92F2EA20AC8649006C04AB /* Clothes.swift */; };
 		CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */; };
 		CCA8D65B20B3225400A33D90 /* ClothesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D65A20B3225400A33D90 /* ClothesApi.swift */; };
+		CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D65E20B331D000A33D90 /* HelperService.swift */; };
 		CCC295E9207F93F80021BF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC295E8207F93F80021BF8E /* AppDelegate.swift */; };
 		CCC295F0207F93F90021BF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCC295EF207F93F90021BF8E /* Assets.xcassets */; };
 		CCC295F3207F93F90021BF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC295F1207F93F90021BF8E /* LaunchScreen.storyboard */; };
@@ -53,6 +54,7 @@
 		CC92F2EA20AC8649006C04AB /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCollectionViewCell.swift; sourceTree = "<group>"; };
 		CCA8D65A20B3225400A33D90 /* ClothesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesApi.swift; sourceTree = "<group>"; };
+		CCA8D65E20B331D000A33D90 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
 		CCC295E5207F93F80021BF8E /* LaundryDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaundryDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC295E8207F93F80021BF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC295EF207F93F90021BF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				CC831C30208F1CAE002798A7 /* AuthService.swift */,
 				CC728F4820908962003B3805 /* Config.swift */,
 				CCC83D6A20B2FEA30031A766 /* Api.swift */,
+				CCA8D65E20B331D000A33D90 /* HelperService.swift */,
 				CCC83D6E20B304640031A766 /* UserApi.swift */,
 				CCC83D6C20B2FEBB0031A766 /* MyItemsApi.swift */,
 				CCA8D65A20B3225400A33D90 /* ClothesApi.swift */,
@@ -306,6 +309,7 @@
 			files = (
 				CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */,
 				CCD1C0942092FED1005F6885 /* AddClothesViewController.swift in Sources */,
+				CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */,
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
 				CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */,

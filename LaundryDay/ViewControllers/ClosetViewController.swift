@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
 import SDWebImage
-import FirebaseAuth
 
 class ClosetViewController: UIViewController {
 
@@ -33,7 +31,7 @@ class ClosetViewController: UIViewController {
     }
     
     func fetchMyItems() {
-        guard let currentUser = Auth.auth().currentUser else {
+        guard let currentUser = Api.User.CURRENT_USER else {
             return
         }
         Api.MyItems.REF_MYITEMS.child(currentUser.uid).observe(.childAdded, with: {snapshot in
@@ -44,21 +42,6 @@ class ClosetViewController: UIViewController {
         })
     }
 
-//    func loadData() {
-//        guard let currentUser = Auth.auth().currentUser else{
-//            return
-//        }
-//        /////다시 해야함
-////        let currentUserID = currentUser.uid
-////        Database.database().reference().child("items").child(currentUserID).observe(.childAdded) {snapshot in
-////            if let dict = snapshot.value as? [String:Any] {
-////                let newClothes = Clothes.transformClothes(dict: dict)
-////                self.items.append(newClothes)
-////                self.collectionView.reloadData()
-////            }
-////        }
-//        
-//    }
 
 }
 

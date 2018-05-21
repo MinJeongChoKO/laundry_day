@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseStorage
-import FirebaseDatabase
+
 import ProgressHUD
 
 class SignUpViewController: UIViewController {
