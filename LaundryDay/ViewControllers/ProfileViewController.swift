@@ -20,12 +20,13 @@ class ProfileViewController: UIViewController {
     @IBAction func logOutButton_TUI(_ sender: Any) {
         do {
             try Auth.auth().signOut()
+            let storyboard = UIStoryboard(name: "Start", bundle: nil)
+            let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+            self.present(signInVC, animated: true, completion: nil)
         } catch let logOutError {
             print(logOutError)
         }
-        let storyboard = UIStoryboard(name: "Start", bundle: nil)
-        let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-        self.present(signInVC, animated: true, completion: nil)
+        
     }
     
     

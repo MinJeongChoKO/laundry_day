@@ -47,9 +47,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6k-51-i2t">
-                                                    <rect key="frame" x="35" y="154.5" width="65" height="30"/>
-                                                    <state key="normal" title="하트이미지"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6k-51-i2t">
+                                                    <rect key="frame" x="88" y="158.5" width="12" height="22"/>
+                                                    <state key="normal" image="like"/>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -260,5 +260,6 @@
     </scenes>
     <resources>
         <image name="default" width="1290" height="1290"/>
+        <image name="like" width="12" height="11"/>
     </resources>
 </document>
