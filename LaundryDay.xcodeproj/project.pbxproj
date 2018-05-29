@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC728F4920908963003B3805 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC728F4820908962003B3805 /* Config.swift */; };
+		CC77448B20B58C090086464A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC77448A20B58C090086464A /* GoogleService-Info.plist */; };
 		CC825A532081D43800A4BDCC /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC825A522081D43800A4BDCC /* Start.storyboard */; };
 		CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC825A542081DE6800A4BDCC /* SignInViewController.swift */; };
 		CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC825A562081DE8800A4BDCC /* SignUpViewController.swift */; };
@@ -19,7 +20,6 @@
 		CC825A6D2081E65500A4BDCC /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC825A6C2081E65500A4BDCC /* Board.storyboard */; };
 		CC825A6F2081E66200A4BDCC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC825A6E2081E66200A4BDCC /* Profile.storyboard */; };
 		CC831C31208F1CAE002798A7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC831C30208F1CAE002798A7 /* AuthService.swift */; };
-		CC831C33208F316B002798A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC831C32208F316B002798A7 /* GoogleService-Info.plist */; };
 		CC92F2EB20AC8649006C04AB /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92F2EA20AC8649006C04AB /* Clothes.swift */; };
 		CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */; };
 		CCA8D65B20B3225400A33D90 /* ClothesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D65A20B3225400A33D90 /* ClothesApi.swift */; };
@@ -39,6 +39,7 @@
 		3B3389B95CD66B5797DF95CE /* Pods-LaundryDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.debug.xcconfig"; sourceTree = "<group>"; };
 		C55F18E44790B284EB4FA295 /* Pods_LaundryDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaundryDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC728F4820908962003B3805 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CC77448A20B58C090086464A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CC825A522081D43800A4BDCC /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		CC825A542081DE6800A4BDCC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CC825A562081DE8800A4BDCC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		CC825A6C2081E65500A4BDCC /* Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
 		CC825A6E2081E66200A4BDCC /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		CC831C30208F1CAE002798A7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		CC831C32208F316B002798A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC92F2EA20AC8649006C04AB /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCollectionViewCell.swift; sourceTree = "<group>"; };
 		CCA8D65A20B3225400A33D90 /* ClothesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesApi.swift; sourceTree = "<group>"; };
@@ -160,9 +160,9 @@
 		CCC295E7207F93F80021BF8E /* LaundryDay */ = {
 			isa = PBXGroup;
 			children = (
+				CC77448A20B58C090086464A /* GoogleService-Info.plist */,
 				CC92F2EC20AC9E04006C04AB /* Views */,
 				CC92F2E920AC8633006C04AB /* Model */,
-				CC831C32208F316B002798A7 /* GoogleService-Info.plist */,
 				CC825A712081E6B600A4BDCC /* ViewControllers */,
 				CCC295E8207F93F80021BF8E /* AppDelegate.swift */,
 				CCC295EF207F93F90021BF8E /* Assets.xcassets */,
@@ -241,8 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC295F3207F93F90021BF8E /* LaunchScreen.storyboard in Resources */,
+				CC77448B20B58C090086464A /* GoogleService-Info.plist in Resources */,
 				CC825A672081E51000A4BDCC /* Main.storyboard in Resources */,
-				CC831C33208F316B002798A7 /* GoogleService-Info.plist in Resources */,
 				CC825A532081D43800A4BDCC /* Start.storyboard in Resources */,
 				CC825A692081E62300A4BDCC /* Closet.storyboard in Resources */,
 				CC825A6F2081E66200A4BDCC /* Profile.storyboard in Resources */,
